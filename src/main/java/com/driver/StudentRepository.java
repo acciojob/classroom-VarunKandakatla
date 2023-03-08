@@ -70,7 +70,7 @@ public class StudentRepository {
             if(pairStudentTeacher.get(stu).equals(teacher))
             {
                 pairStudentTeacher.remove(stu);
-//                studentMap.remove(stu);
+                studentMap.remove(stu);
             }
         }
 
@@ -80,6 +80,10 @@ public class StudentRepository {
     }
 
     public void deleteAllTeachers(){
+        for(String t : teacherMap.keySet())
+        {
+            deleteTeacherByName(t);
+        }
         teacherMap.clear();
         pairStudentTeacher.clear();
         studentListofTeacher.clear();
